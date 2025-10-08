@@ -1,0 +1,869 @@
+/* general.css - Đã tối ưu và chuẩn Responsive */
+
+/* ========================================================== */
+/* 1. ĐỊNH NGHĨA BIẾN CSS VÀ THIẾT LẬP CHUNG (GIỮ LẠI TRONG general.css) */
+/* ========================================================== */
+
+:root {
+    --primary-color: #FEA116; /* Màu Cam/Vàng nổi bật */
+    --dark-color: #0F172B; /* Màu nền tối cho Header/Footer */
+    --light-color: #e4e9d6;
+    --font-family-primary: 'Arial', sans-serif;
+    --secondary-text: #666;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--secondary-text);
+    padding-top: 70px; 
+}
+.hero-section {
+    padding-top: 70px; /* Vẫn giữ lại để tránh xung đột, nhưng nên chuyển hẳn vào header.css */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================================== */
+/* 2. TÙY CHỈNH BOOTSTRAP COMPONENTS (BUTTONS & NAVBAR) (GIỮ LẠI TRONG general.css) */
+/* ========================================================== */
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFC06E !important;
+    border-color: #FFC06E !important;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+    height: 35px;
+    width: auto;
+}
+
+/* Navbar Hover */
+#mainNav .nav-link:hover {
+    color: var(--primary-color) !important; 
+}
+
+/* Navbar Scroll Effect (CẦN home.js) */
+#mainNav.scrolled {
+    background-color: var(--dark-color) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar Link Color when Scrolled */
+#mainNav.scrolled .nav-link {
+    color: var(--primary-color) !important; 
+}
+
+
+/* ========================================================== */
+/* 3. ĐỊNH DẠNG CHUNG CÁC SECTION VÀ TIÊU ĐỀ PHỤ (GIỮ LẠI TRONG general.css) */
+/* ========================================================== */
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none !important; 
+}
+
+/* Xử lý gạch ngang/gạch chân chung cho tiêu đề */
+.section-title::before,
+.section-title::after {
+    content: none !important;
+}
+.section-title.text-underline {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px; 
+}
+
+/* Tiêu đề căn trái có gạch chân (dùng cho About/Contact) */
+.section-title.text-start::after {
+    left: 0;
+    width: 45px;
+    height: 2px;
+    background: var(--primary-color);
+    content: "";
+    position: absolute;
+    bottom: -8px;
+}
+.section-title.text-start::before {
+    content: none !important;
+}
+
+
+/* ========================================================== */
+/* 4. ĐỊNH DẠNG FEATURE CARDS (4 Ô TÍNH NĂNG) (GIỮ LẠI TRONG general.css) */
+/* ========================================================== */
+
+.feature-card {
+    border: 1px solid #EEEEEE; 
+    padding: 30px;
+    transition: 0.5s;
+    text-align: center; 
+    background-color: var(--light-color);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .05);
+    height: 100%;
+}
+
+.feature-card .icon-wrapper {
+    width: 90px;
+    height: 90px;
+    background-color: var(--light-color) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.feature-card i {
+    color: var(--primary-color) !important; 
+}
+
+/* --- TRẠNG THÁI HOVER --- */
+.feature-card:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.feature-card:hover h5,
+.feature-card:hover p {
+    color: var(--light-color) !important; 
+}
+.feature-card:hover .icon-wrapper {
+    background-color: var(--dark-color) !important; 
+    border-color: var(--light-color) !important;
+}
+.feature-card:hover i {
+    color: var(--light-color) !important;
+}
+
+
+/* ========================================================== */
+/* 5. MEDIA QUERIES CHUNG (GIỮ LẠI TRONG general.css) */
+/* ========================================================== */
+
+/* Thiết bị nhỏ hơn 992px (Tablet) */
+@media (max-width: 991.98px) {
+    /* Menu Mobile khi mở */
+    .navbar-collapse.show {
+        background-color: var(--dark-color);
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 10px;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 100; 
+    }
+    
+    .navbar-collapse.show .nav-link {
+        color: var(--light-color) !important;
+        padding: 8px 15px;
+    }
+    
+    /* FIX LỖI LẶP MENU/LOGO */
+    .navbar-collapse.show > :not(ul) {
+        display: none !important;
+    }
+}
+
+/* Thiết bị nhỏ hơn 768px (Mobile) */
+@media (max-width: 767.98px) {
+    /* Điều chỉnh lại khoảng cách trên mobile */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+
+/* ########################################################## */
+/* ### KHỐI CSS TÁCH RA THÀNH FILE RIÊNG (Ví dụ: header.css) ### */
+/* ########################################################## */
+
+
+/* ========================================================== */
+/* 6. HERO SECTION (BANNER CHÍNH) (CHUYỂN VÀO header.css) */
+/* ========================================================== */
+.hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 100px;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.custom-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+/* HERO IMAGE (Phương pháp cắt và Xoay) */
+#hero-grill-wrapper {
+    border-radius: 50%;
+    width: 500px; height: 500px;
+    margin: 0 auto; 
+    overflow: hidden; 
+    animation: spin 5s linear infinite; /* Đã thay đổi từ 30s thành 5s */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-img-grill {
+    width: 115%; height: 115%;
+    margin: -7.5% -7.5%; 
+    transform: none; 
+    box-shadow: none; 
+}
+
+
+/* ========================================================== */
+/* 7. KEYFRAMES VÀ ANIMATION (CHUYỂN VÀO header.css) */
+/* ========================================================== */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInTop {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero-content-animation { opacity: 0; }
+.hero-content-animation.h1 { animation: slideInTop 0.8s ease-out 0.2s forwards; }
+.hero-content-animation.p { animation: fadeInUp 0.8s ease-out 0.5s forwards; }
+.hero-content-animation.button { animation: fadeInUp 0.8s ease-out 0.8s forwards; }
+
+
+/* ========================================================== */
+/* 8. MEDIA QUERIES CHO HERO (CHUYỂN VÀO header.css) */
+/* ========================================================== */
+
+@media (max-width: 991.98px) {
+    #hero-grill-wrapper {
+        width: 400px; height: 400px; margin-top: 30px;
+    }
+    .hero-section h1 { font-size: 3rem; }
+}
+
+@media (max-width: 767.98px) {
+    #hero-grill-wrapper {
+        width: 300px; height: 300px; margin-top: 50px;
+    }
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section p { font-size: 0.9rem; }
+    .hero-section { min-height: 80vh; }
+    .hero-section .col-lg-6 { text-align: center !important; }
+    .hero-section a.btn { margin: 0 auto; display: inline-block; }
+}
+
+
+/* ========================================================== */
+/* 9. CUSTOM ANIMATION (FadeInUp thay thế WOW.js) (CHUYỂN VÀO home.css) */
+/* ========================================================== */
+
+.animated-item, 
+.animated-set {
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.animated-item.show,
+.animated-set.show {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+/* ========================================================== */
+/* 10. ABOUT SECTION (CHUYỂN VÀO home.css hoặc about.css) */
+/* ========================================================== */
+
+.about-img-box {
+    position: relative;
+    height: 100%; 
+}
+
+.about-img-box img {
+    border-radius: var(--border-radius-lg); 
+    object-fit: cover; 
+    height: 100%; 
+}
+.about-img-box > div:nth-child(1) img { 
+    height: 300px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box > div:nth-child(2) img { 
+    height: 300px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box > div:nth-child(3) img { 
+    height: 200px; 
+    width: 100%;
+    object-fit: cover;
+}
+.about-img-box > div:nth-child(4) img { 
+    height: 200px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box .col-6 {
+    padding: 0 10px; 
+}
+
+.about-img-box .row.g-3 {
+    margin: 0 -10px; 
+}
+
+
+/* ========================================================== */
+/* 11. MENU SECTION (CHUYỂN VÀO home.css hoặc menu.css) */
+/* ========================================================== */
+
+.menu-item {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+#menu-section .nav-pills .nav-item a {
+    color: var(--dark-color) !important;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none !important; 
+    border-bottom: none !important; 
+}
+
+#menu-section .nav-pills .nav-item a small,
+#menu-section .nav-pills .nav-item a h6 {
+    text-decoration: none !important; 
+}
+
+#menu-section .nav-pills .nav-item a:hover {
+    color: var(--primary-color) !important;
+}
+
+#menu-section .nav-pills .nav-item a i {
+    margin-right: 15px;
+    color: var(--primary-color) !important; 
+    opacity: 1 !important; 
+    visibility: visible !important; 
+}
+
+#menu-section .nav-pills .nav-item a.active small,
+#menu-section .nav-pills .nav-item a.active h6 {
+    color: var(--primary-color) !important;
+}
+
+#menu-section .nav-pills .nav-item .active {
+    border-bottom: 2px solid var(--primary-color) !important;
+}
+
+
+/* ========================================================== */
+/* 12. ĐẶT BÀN (RESERVATION) SECTION (CHUYỂN VÀO home.css hoặc reservation.css) */
+/* ========================================================== */
+
+#reservation-section .video-display-area {
+    position: relative;
+    overflow: hidden; 
+    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../images/video.jpg) center center no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
+    min-height: 400px; 
+}
+
+@media (min-width: 992px) {
+    #reservation-section .row.g-0.align-items-stretch {
+        display: flex;
+        align-items: stretch; 
+    }
+    #reservation-section .video-display-area,
+    #reservation-section .col-lg-6 > div {
+        height: 100%; 
+        min-height: 535px; 
+    }
+}
+
+#reservation-section .booking-form-content {
+    background-color: var(--dark-color) !important; 
+    padding: 3rem !important; 
+    min-height: 535px; 
+}
+
+#reservation-section .section-title-small {
+    font-size: 1rem; 
+    color: var(--primary-color); 
+    font-weight: normal;
+    position: relative; 
+    padding-bottom: 0; 
+    margin-bottom: 0.5rem; 
+    display: inline-block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#reservation-section h1 {
+    color: var(--light-color); 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin-top: 1rem; 
+    margin-bottom: 2rem !important; 
+    text-align: center !important; 
+}
+
+/* Form controls (Input, Select, Textarea) */
+#reservation-section .form-floating {
+    background-color: var(--light-color); 
+    border-radius: 0.25rem; 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    height: 55px; 
+    margin-bottom: 1rem; 
+}
+
+#reservation-section .form-control,
+#reservation-section .form-select {
+    height: 55px !important; 
+    background-color: transparent; 
+    border: none; 
+    border-radius: 0.25rem;
+    color: var(--dark-color); 
+    padding: 1rem 0.75rem 0 0.75rem; 
+}
+
+#reservation-section textarea.form-control {
+    height: 100px !important; 
+    padding-top: 1.5rem; 
+}
+
+#reservation-section .form-floating label {
+    color: var(--secondary-color); 
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem); 
+    opacity: 0.65; 
+}
+
+#reservation-section .form-floating>.form-control:not(:placeholder-shown)~label, 
+#reservation-section .form-floating>.form-select~label {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem); 
+    opacity: 1; 
+}
+
+#reservation-section .form-control:focus,
+#reservation-section .form-select:focus {
+    border: 1px solid var(--primary-color) !important; 
+    box-shadow: none; 
+    background-color: transparent; 
+    color: var(--dark-color); 
+}
+
+#reservation-section .btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--dark-color) !important; 
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#reservation-section .btn-primary:hover {
+    background-color: var(--secondary-color) !important; 
+    border-color: var(--secondary-color) !important;
+}
+
+/* NÚT PLAY */
+#reservation-section .btn-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box; display: block;
+    width: 32px; height: 44px;
+    border-radius: 100%; border: none; outline: none;
+    padding: 18px 20px 18px 28px;
+    background: transparent;
+}
+#reservation-section .btn-play:before {
+    content: ""; position: absolute; z-index: 0;
+    left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: block; width: 100px; height: 100px;
+    background: var(--primary-color); border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+#reservation-section .btn-play:after {
+    content: ""; position: absolute; z-index: 1;
+    left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: block; width: 100px; height: 100px;
+    background: var(--primary-color); border-radius: 100%;
+    transition: all 200ms;
+}
+#reservation-section .btn-play:hover:after {
+    background: var(--dark-color);
+}
+#reservation-section .btn-play span {
+    display: block; position: relative; z-index: 3;
+    width: 0; height: 0;
+    border-left: 32px solid var(--light-color);
+    border-top: 22px solid transparent; border-bottom: 22px solid transparent;
+}
+@keyframes pulse-border {
+    0% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5); opacity: 0; }
+}
+
+
+/* ========================================================== */
+/* 13. ĐỘI NGŨ ĐẦU BẾP (TEAM) SECTION (CHUYỂN VÀO home.css hoặc team.css) */
+/* ========================================================== */
+
+#team-section .section-title-small {
+    font-size: 1rem; 
+    color: var(--primary-color); 
+    font-weight: normal;
+    position: relative;
+    padding-bottom: 10px; 
+    margin-bottom: 10px;
+    display: inline-block;
+}
+#team-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--primary-color); 
+}
+
+#team-section h1 {
+    color: var(--dark-color); 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+}
+
+#team-section .team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08); 
+    transition: .5s; 
+}
+
+#team-section .team-item .rounded-circle {
+    position: relative;
+    margin-bottom: -50px; 
+    transform: scale(1); 
+    transition: .5s; 
+}
+#team-section .team-item img {
+    transform: scale(1); 
+    transition: .5s; 
+}
+
+#team-section .team-item .d-flex {
+    width: 100%; 
+    height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    transition: .5s; 
+}
+#team-section .team-item .d-flex a.btn-square {
+    background-color: var(--primary-color); 
+    color: var(--dark-color); 
+    border: none;
+    border-radius: 5px; 
+    width: 40px; 
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center;
+    font-size: 1rem;
+    transition: .3s; 
+}
+#team-section .team-item .d-flex a.btn-square:hover {
+    background-color: var(--dark-color); 
+    color: var(--primary-color); 
+}
+
+/* HIỆU ỨNG HOVER */
+#team-section .team-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .15); 
+    transform: translateY(-10px); 
+}
+
+#team-section .team-item:hover .rounded-circle {
+    transform: scale(1.05); 
+}
+#team-section .team-item:hover .rounded-circle img {
+    transform: scale(1.1); 
+}
+
+#team-section .team-item:hover .d-flex {
+    height: 50px; 
+    opacity: 1; 
+}
+
+
+/* ========================================================== */
+/* 14. ĐÁNH GIÁ KHÁCH HÀNG (TESTIMONIAL) SECTION (CHUYỂN VÀO home.css hoặc testimonial.css) */
+/* ========================================================== */
+
+#testimonial-section .section-title-small {
+    color: var(--primary-color) !important; 
+    font-weight: bold; 
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+#testimonial-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--primary-color); 
+}
+#testimonial-section h1 {
+    color: var(--dark-color); 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+}
+
+#testimonial-section .testimonial-item {
+    padding: 30px;
+    border-radius: 0.5rem; 
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); 
+    border: 1px solid var(--primary-color) !important; 
+    min-height: 280px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box; 
+    background-color: #ffffff !important; 
+    transition: 0.5s; 
+}
+#testimonial-section .testimonial-item i.fa-quote-left {
+    color: var(--primary-color) !important; 
+}
+
+#testimonial-section .testimonial-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.25); 
+}
+
+/* Kiểu dáng Nền Cam */
+#testimonial-section .bg-primary-custom {
+    background-color: var(--primary-color) !important;
+}
+#testimonial-section .bg-primary-custom i.fa-quote-left {
+    color: #ffffff !important; 
+}
+#testimonial-section .bg-primary-custom p,
+#testimonial-section .bg-primary-custom h5 {
+    color: #ffffff !important; 
+}
+#testimonial-section .bg-primary-custom small {
+    color: rgba(255, 255, 255, 0.7) !important; 
+}
+
+/* OWL CAROUSEL STYLES */
+.testimonial-carousel {
+    margin-left: -1px; margin-right: -1px; 
+    padding-left: 1px; padding-right: 1px;
+}
+.testimonial-carousel .owl-item {
+    float: none !important; 
+    display: inline-block !important; 
+    box-sizing: border-box !important;
+}
+.testimonial-carousel .owl-stage-outer {
+    overflow: hidden; 
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+.testimonial-carousel .owl-dot {
+    width: 15px; height: 15px;
+    margin: 0 5px;
+    background: #DDDDDD; 
+    border-radius: 50%;
+    border: 1px solid #DDDDDD;
+    transition: .5s;
+}
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary-color); 
+    border-color: var(--primary-color);
+}
+.testimonial-carousel .owl-nav {
+    display: none !important;
+    visibility: hidden !important;
+}
+.testimonial-carousel .owl-prev,
+.testimonial-carousel .owl-next {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+/* ========================================================== */
+/* 15. FOOTER SECTION (HERO BACKGROUND) (CHUYỂN VÀO footer.css) */
+/* ========================================================== */
+
+.footer-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    color: #DDDDDD; 
+}
+
+.footer-hero-section .footer-bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.footer-hero-section .footer-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(17, 17, 34, 0.8); 
+    z-index: 2; 
+    padding: 5rem 0; 
+}
+
+/* Tiêu đề cột */
+.footer-hero-section .section-title-small {
+    color: var(--primary-color) !important; 
+    font-weight: bold; 
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.footer-hero-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 0; 
+    background: var(--primary-color); 
+}
+
+/* Kiểu dáng cho các liên kết (Công ty) */
+.footer-hero-section .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #DDDDDD;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+.footer-hero-section .btn.btn-link:hover {
+    color: var(--primary-color); 
+    text-decoration: none;
+}
+.footer-hero-section .btn.btn-link i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--primary-color); 
+}
+
+/* Icon mạng xã hội */
+.footer-hero-section .btn.btn-social {
+    margin-right: 5px;
+    width: 35px; height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    border-radius: 35px;
+}
+.footer-hero-section .btn.btn-social:hover {
+    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Khối bản quyền (Footer bottom) */
+.footer-hero-section .copyright {
+    padding-top: 25px;
+    padding-bottom: 0px; 
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-top: 2rem; 
+}
+.footer-hero-section .copyright a {
+    color: #DDDDDD;
+}
+.footer-hero-section .copyright a:hover {
+    color: var(--primary-color);
+}
+.footer-hero-section .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #DDDDDD;
+}
+.footer-hero-section .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+#mainNav .navbar-nav .nav-link.active {
+    /* Đổi từ var(--primary-color) sang màu xanh da trời sáng */
+    color: #f70505 !important; 
+    font-weight: 700; /* Tăng độ đậm */
+}

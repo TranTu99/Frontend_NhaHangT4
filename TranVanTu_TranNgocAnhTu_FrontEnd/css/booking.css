@@ -1,0 +1,457 @@
+/* booking.css - CSS cho trang Đặt bàn, đã bao gồm các định nghĩa chung, Hero Section và Footer */
+
+/* ========================================================== */
+/* 1. ĐỊNH NGHĨA BIẾN CSS VÀ THIẾT LẬP CHUNG */
+/* ========================================================== */
+
+:root {
+    --primary-color: #FEA116; /* Màu Cam/Vàng nổi bật */
+    --dark-color: #0F172B; /* Màu nền tối cho Header/Footer/Form */
+    --light-color: #e4e9d6;
+    --font-family-primary: 'Arial', sans-serif;
+    --secondary-text: #666;
+    --secondary-color: #FFC06E; /* Dùng tạm cho hover */
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--secondary-text);
+    padding-top: 70px; /* Khoảng cách với Navbar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tùy chỉnh Bootstrap Components */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.navbar-logo {
+    height: 35px;
+    width: auto;
+}
+
+#mainNav .nav-link:hover {
+    color: var(--primary-color) !important; 
+}
+
+#mainNav.scrolled {
+    background-color: var(--dark-color) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+#mainNav.scrolled .nav-link {
+    color: var(--primary-color) !important; 
+}
+
+/* Tiêu đề căn trái có gạch chân (dùng cho Footer) */
+.section-title.text-start::after {
+    left: 0;
+    width: 45px;
+    height: 2px;
+    background: var(--primary-color);
+    content: "";
+    position: absolute;
+    bottom: -8px;
+}
+.section-title.text-start::before {
+    content: none !important;
+}
+
+/* ========================================================== */
+/* 2. HERO SECTION (BANNER CHÍNH & XOAY) */
+/* ========================================================== */
+.hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 100px;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.custom-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+/* HERO IMAGE (Phương pháp cắt và Xoay) */
+#hero-grill-wrapper {
+    border-radius: 50%;
+    width: 500px; height: 500px;
+    margin: 0 auto; 
+    overflow: hidden; 
+    animation: spin 30s linear infinite; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-img-grill {
+    width: 115%; height: 115%;
+    margin: -7.5% -7.5%; 
+    transform: none; 
+    box-shadow: none; 
+}
+
+/* KEYFRAMES VÀ ANIMATION */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInTop {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero-content-animation { opacity: 0; }
+.hero-content-animation.h1 { animation: slideInTop 0.8s ease-out 0.2s forwards; }
+.hero-content-animation.p { animation: fadeInUp 0.8s ease-out 0.5s forwards; }
+.hero-content-animation.button { animation: fadeInUp 0.8s ease-out 0.8s forwards; }
+
+
+/* ========================================================== */
+/* 3. ĐẶT BÀN (RESERVATION) SECTION */
+/* ========================================================== */
+
+#reservation-section .video-display-area {
+    position: relative;
+    overflow: hidden; 
+    /* Giả định có ảnh nền video.jpg trong thư mục images */
+    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../images/video.jpg) center center no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
+    min-height: 400px; 
+}
+
+@media (min-width: 992px) {
+    #reservation-section .row.g-0.align-items-stretch {
+        display: flex;
+        align-items: stretch; 
+    }
+    #reservation-section .video-display-area,
+    #reservation-section .col-lg-6 > div {
+        height: 100%; 
+        min-height: 535px; /* Chiều cao cố định trên desktop */
+    }
+}
+
+#reservation-section .booking-form-content {
+    background-color: var(--dark-color) !important; 
+    padding: 3rem !important; 
+    min-height: 535px; 
+}
+
+#reservation-section .section-title-small {
+    font-size: 1rem; 
+    color: var(--primary-color); 
+    font-weight: normal;
+    position: relative; 
+    padding-bottom: 0; 
+    margin-bottom: 0.5rem; 
+    display: inline-block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#reservation-section h1 {
+    color: var(--light-color); 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin-top: 1rem; 
+    margin-bottom: 2rem !important; 
+    text-align: center !important; 
+}
+
+/* Form controls (Input, Select, Textarea) */
+#reservation-section .form-floating {
+    background-color: var(--light-color); 
+    border-radius: 0.25rem; 
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    height: 55px; 
+    margin-bottom: 1rem; 
+}
+
+#reservation-section .form-control,
+#reservation-section .form-select {
+    height: 55px !important; 
+    background-color: transparent; 
+    border: none; 
+    border-radius: 0.25rem;
+    color: var(--dark-color); 
+    padding: 1rem 0.75rem 0 0.75rem; 
+}
+
+#reservation-section textarea.form-control {
+    height: 100px !important; 
+    padding-top: 1.5rem; 
+}
+
+#reservation-section .form-floating label {
+    color: var(--secondary-text); 
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem); 
+    opacity: 0.65; 
+}
+
+#reservation-section .form-floating>.form-control:not(:placeholder-shown)~label, 
+#reservation-section .form-floating>.form-select~label {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem); 
+    opacity: 1; 
+}
+
+#reservation-section .form-control:focus,
+#reservation-section .form-select:focus {
+    border: 1px solid var(--primary-color) !important; 
+    box-shadow: none; 
+    background-color: transparent; 
+    color: var(--dark-color); 
+}
+
+/* Nút Đặt bàn */
+#reservation-section .btn-primary {
+    color: var(--dark-color) !important; 
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* NÚT PLAY */
+#reservation-section .btn-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box; display: block;
+    width: 32px; height: 44px;
+    border-radius: 100%; border: none; outline: none;
+    padding: 18px 20px 18px 28px;
+    background: transparent;
+}
+#reservation-section .btn-play:before {
+    content: ""; position: absolute; z-index: 0;
+    left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: block; width: 100px; height: 100px;
+    background: var(--primary-color); border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+#reservation-section .btn-play:after {
+    content: ""; position: absolute; z-index: 1;
+    left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: block; width: 100px; height: 100px;
+    background: var(--primary-color); border-radius: 100%;
+    transition: all 200ms;
+}
+#reservation-section .btn-play:hover:after {
+    background: var(--dark-color);
+}
+#reservation-section .btn-play span {
+    display: block; position: relative; z-index: 3;
+    width: 0; height: 0;
+    border-left: 32px solid var(--light-color);
+    border-top: 22px solid transparent; border-bottom: 22px solid transparent;
+}
+@keyframes pulse-border {
+    0% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5); opacity: 0; }
+}
+
+/* ========================================================== */
+/* 4. FOOTER SECTION (FOOTER HERO BACKGROUND) */
+/* ========================================================== */
+
+.footer-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    color: #DDDDDD; 
+}
+
+.footer-hero-section .footer-bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.footer-hero-section .footer-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(17, 17, 34, 0.8); 
+    z-index: 2; 
+    padding: 5rem 0; 
+}
+
+/* Tiêu đề cột Footer */
+.footer-hero-section .section-title-small {
+    color: var(--primary-color) !important; 
+    font-weight: bold; 
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.footer-hero-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 0; 
+    background: var(--primary-color); 
+}
+
+/* Kiểu dáng cho các liên kết (Công ty) */
+.footer-hero-section .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #DDDDDD;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+.footer-hero-section .btn.btn-link:hover {
+    color: var(--primary-color); 
+    text-decoration: none;
+}
+.footer-hero-section .btn.btn-link i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--primary-color); 
+}
+
+/* Icon mạng xã hội */
+.footer-hero-section .btn.btn-social {
+    margin-right: 5px;
+    width: 35px; height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    border-radius: 35px;
+}
+.footer-hero-section .btn.btn-social:hover {
+    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Khối bản quyền (Footer bottom) */
+.footer-hero-section .copyright {
+    padding-top: 25px;
+    padding-bottom: 0px; 
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-top: 2rem; 
+}
+.footer-hero-section .copyright a {
+    color: #DDDDDD;
+}
+.footer-hero-section .copyright a:hover {
+    color: var(--primary-color);
+}
+.footer-hero-section .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #DDDDDD;
+}
+.footer-hero-section .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/* ========================================================== */
+/* 5. MEDIA QUERIES CHUNG VÀ CHO HERO/NAVBAR */
+/* ========================================================== */
+
+/* Thiết bị nhỏ hơn 992px (Tablet) */
+@media (max-width: 991.98px) {
+    /* Menu Mobile khi mở */
+    .navbar-collapse.show {
+        background-color: var(--dark-color);
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 10px;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 100; 
+    }
+    
+    .navbar-collapse.show .nav-link {
+        color: var(--light-color) !important;
+        padding: 8px 15px;
+    }
+    
+    /* FIX LỖI LẶP MENU/LOGO */
+    .navbar-collapse.show > :not(ul) {
+        display: none !important;
+    }
+
+    /* Hero Section */
+    #hero-grill-wrapper {
+        width: 400px; height: 400px; margin-top: 30px;
+    }
+    .hero-section h1 { font-size: 3rem; }
+}
+
+/* Thiết bị nhỏ hơn 768px (Mobile) */
+@media (max-width: 767.98px) {
+    /* Điều chỉnh lại khoảng cách trên mobile */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    /* Hero Section */
+    #hero-grill-wrapper {
+        width: 300px; height: 300px; margin-top: 50px;
+    }
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section p { font-size: 0.9rem; }
+    .hero-section { min-height: 80vh; }
+    .hero-section .col-lg-6 { text-align: center !important; }
+    .hero-section a.btn { margin: 0 auto; display: inline-block; }
+}
+
+#mainNav .navbar-nav .nav-link.active {
+    /* Đổi từ var(--primary-color) sang màu xanh da trời sáng */
+    color: #f70505 !important; 
+    font-weight: 700; /* Tăng độ đậm */
+}

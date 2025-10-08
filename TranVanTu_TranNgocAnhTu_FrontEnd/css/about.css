@@ -1,0 +1,551 @@
+/* about.css - Đã tinh gọn và bổ sung Hero Section CSS cho hiệu ứng xoay/nhún nhảy */
+
+/* ========================================================== */
+/* 1. ĐỊNH NGHĨA BIẾN CSS VÀ THIẾT LẬP CHUNG */
+/* ========================================================== */
+
+:root {
+    --primary-color: #FEA116; 
+    --dark-color: #0F172B; 
+    --light-color: #e4e9d6;
+    --font-family-primary: 'Arial', sans-serif;
+    --secondary-text: #666;
+    --border-radius-lg: 0.25rem;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--secondary-text);
+    padding-top: 70px; 
+}
+.hero-section {
+    padding-top: 70px; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* ========================================================== */
+/* 2. TÙY CHỈNH BOOTSTRAP COMPONENTS (BUTTONS & NAVBAR) */
+/* ========================================================== */
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFC06E !important;
+    border-color: #FFC06E !important;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+    height: 35px;
+    width: auto;
+}
+
+/* Navbar Hover */
+#mainNav .nav-link:hover {
+    color: var(--primary-color) !important; 
+}
+
+/* Navbar Scroll Effect (CẦN home.js/about.js) */
+#mainNav.scrolled {
+    background-color: var(--dark-color) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar Link Color when Scrolled */
+#mainNav.scrolled .nav-link {
+    color: var(--light-color) !important; 
+}
+
+
+/* ========================================================== */
+/* 3. HERO SECTION (BANNER ĐẦU TRANG) */
+/* ========================================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* Chiều cao lớn hơn cho banner có ảnh */
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+}
+
+/* Overlay tối để chữ dễ đọc */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 34, 0.8);
+    z-index: 1;
+}
+
+.hero-section > .container-fluid {
+    position: relative; 
+    z-index: 2; 
+}
+
+/* Hiệu ứng xoay/nhún nhảy cho ảnh hero */
+.hero-img-grill {
+    max-width: 80%;
+    height: auto;
+    animation: bounce 2s infinite alternate; 
+}
+
+.custom-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================================== */
+/* 4. ĐỊNH DẠNG CHUNG CÁC SECTION VÀ TIÊU ĐỀ PHỤ */
+/* ========================================================== */
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none !important; 
+}
+
+/* Xử lý gạch ngang/gạch chân chung cho tiêu đề */
+.section-title::before,
+.section-title::after {
+    content: none !important;
+}
+.section-title.text-underline {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px; 
+}
+
+/* Tiêu đề căn trái có gạch chân (Dùng cho About Section) */
+.section-title.text-start::after {
+    left: 0;
+    width: 45px;
+    height: 2px;
+    background: var(--primary-color);
+    content: "";
+    position: absolute;
+    bottom: -8px;
+}
+.section-title.text-start::before {
+    content: none !important;
+}
+
+
+/* ========================================================== */
+/* 5. ĐỊNH DẠNG FEATURE CARDS (4 Ô TÍNH NĂNG) */
+/* ========================================================== */
+
+.feature-card {
+    border: 1px solid #EEEEEE; 
+    padding: 30px;
+    transition: 0.5s;
+    text-align: center; 
+    background-color: var(--light-color);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .05);
+    height: 100%;
+}
+
+.feature-card .icon-wrapper {
+    width: 90px;
+    height: 90px;
+    background-color: var(--light-color) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.feature-card i {
+    color: var(--primary-color) !important; 
+}
+
+/* --- TRẠNG THÁI HOVER --- */
+.feature-card:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.feature-card:hover h5,
+.feature-card:hover p {
+    color: var(--light-color) !important; 
+}
+.feature-card:hover .icon-wrapper {
+    background-color: var(--dark-color) !important; 
+    border-color: var(--light-color) !important;
+}
+.feature-card:hover i {
+    color: var(--light-color) !important;
+}
+
+
+/* ========================================================== */
+/* 6. MEDIA QUERIES CHUNG */
+/* ========================================================== */
+
+/* Thiết bị nhỏ hơn 992px (Tablet) */
+@media (max-width: 991.98px) {
+    /* Menu Mobile khi mở */
+    .navbar-collapse.show {
+        background-color: var(--dark-color);
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 10px;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 100; 
+    }
+    
+    .navbar-collapse.show .nav-link {
+        color: var(--light-color) !important;
+        padding: 8px 15px;
+    }
+    
+    /* FIX LỖI LẶP MENU/LOGO */
+    .navbar-collapse.show > :not(ul) {
+        display: none !important;
+    }
+
+    /* Hero */
+    .hero-section {
+        min-height: 400px; 
+    }
+    .hero-img-grill {
+        display: none; /* Ẩn ảnh lớn trên mobile/tablet để tập trung vào chữ */
+    }
+}
+
+/* Thiết bị nhỏ hơn 768px (Mobile) */
+@media (max-width: 767.98px) {
+    /* Điều chỉnh lại khoảng cách trên mobile */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    /* Điều chỉnh cho Team Section trên mobile */
+    #team-section .team-item:hover .rounded-circle {
+        transform: scale(1); /* Tắt phóng to icon trên mobile */
+    }
+}
+
+
+/* ========================================================== */
+/* 7. CUSTOM ANIMATION (Dùng cho mọi trang, bao gồm About) */
+/* ========================================================== */
+
+.animated-item, 
+.animated-set {
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.animated-item.show,
+.animated-set.show {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/* Animation cho Hero image */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+/* Dùng cho Hero content */
+.hero-content-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+.hero-content-animation.h1 { animation-delay: 0.2s; }
+.hero-content-animation.p { animation-delay: 0.4s; }
+.hero-content-animation.button { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================================== */
+/* 8. ABOUT SECTION (Khối 4 ảnh) */
+/* ========================================================== */
+
+.about-img-box {
+    position: relative;
+    height: 100%; 
+}
+
+.about-img-box img {
+    border-radius: var(--border-radius-lg); 
+    object-fit: cover; 
+    height: 100%; 
+}
+.about-img-box > div:nth-child(1) img { 
+    height: 300px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box > div:nth-child(2) img { 
+    height: 300px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box > div:nth-child(3) img { 
+    height: 200px; 
+    width: 100%;
+    object-fit: cover;
+}
+.about-img-box > div:nth-child(4) img { 
+    height: 200px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-img-box .col-6 {
+    padding: 0 10px; 
+}
+
+.about-img-box .row.g-3 {
+    margin: 0 -10px; 
+}
+
+
+/* ========================================================== */
+/* 9. ĐỘI NGŨ ĐẦU BẾP (TEAM) SECTION */
+/* ========================================================== */
+
+#team-section .section-title-small {
+    font-size: 1rem; 
+    color: var(--primary-color); 
+    font-weight: normal;
+    position: relative;
+    padding-bottom: 10px; 
+    margin-bottom: 10px;
+    display: inline-block;
+}
+#team-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--primary-color); 
+}
+
+#team-section h1 {
+    color: var(--dark-color); 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+}
+
+#team-section .team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08); 
+    transition: .5s; 
+}
+
+#team-section .team-item .rounded-circle {
+    position: relative;
+    margin-bottom: -50px; 
+    transform: scale(1); 
+    transition: .5s; 
+}
+#team-section .team-item img {
+    transform: scale(1); 
+    transition: .5s; 
+}
+
+#team-section .team-item .d-flex {
+    width: 100%; 
+    height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    transition: .5s; 
+}
+#team-section .team-item .d-flex a.btn-square {
+    background-color: var(--primary-color); 
+    color: var(--dark-color); 
+    border: none;
+    border-radius: 5px; 
+    width: 40px; 
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center;
+    font-size: 1rem;
+    transition: .3s; 
+}
+#team-section .team-item .d-flex a.btn-square:hover {
+    background-color: var(--dark-color); 
+    color: var(--primary-color); 
+}
+
+/* HIỆU ỨNG HOVER */
+#team-section .team-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .15); 
+    transform: translateY(-10px); 
+}
+
+#team-section .team-item:hover .rounded-circle {
+    transform: scale(1.05); 
+}
+#team-section .team-item:hover .rounded-circle img {
+    transform: scale(1.1); 
+}
+
+#team-section .team-item:hover .d-flex {
+    height: 50px; 
+    opacity: 1; 
+}
+
+
+/* ========================================================== */
+/* 10. FOOTER SECTION (HERO BACKGROUND) */
+/* ========================================================== */
+
+.footer-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    color: #DDDDDD; 
+}
+
+.footer-hero-section .footer-bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.footer-hero-section .footer-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(17, 17, 34, 0.8); 
+    z-index: 2; 
+    padding: 5rem 0; 
+}
+
+/* Tiêu đề cột */
+.footer-hero-section .section-title-small {
+    color: var(--primary-color) !important; 
+    font-weight: bold; 
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.footer-hero-section .section-title-small::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 0; 
+    background: var(--primary-color); 
+}
+
+/* Kiểu dáng cho các liên kết (Công ty) */
+.footer-hero-section .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #DDDDDD;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+.footer-hero-section .btn.btn-link:hover {
+    color: var(--primary-color); 
+    text-decoration: none;
+}
+.footer-hero-section .btn.btn-link i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--primary-color); 
+}
+
+/* Icon mạng xã hội */
+.footer-hero-section .btn.btn-social {
+    margin-right: 5px;
+    width: 35px; height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    border-radius: 35px;
+}
+.footer-hero-section .btn.btn-social:hover {
+    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Khối bản quyền (Footer bottom) */
+.footer-hero-section .copyright {
+    padding-top: 25px;
+    padding-bottom: 0px; 
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-top: 2rem; 
+}
+.footer-hero-section .copyright a {
+    color: #DDDDDD;
+}
+.footer-hero-section .copyright a:hover {
+    color: var(--primary-color);
+}
+.footer-hero-section .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid #DDDDDD;
+}
+.footer-hero-section .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+#mainNav .navbar-nav .nav-link.active {
+    /* Đổi từ var(--primary-color) sang màu xanh da trời sáng */
+    color: #f70505 !important; 
+    font-weight: 700; /* Tăng độ đậm */
+}

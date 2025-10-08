@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="../css/general.css" />
+  </head>
+  <body>
+    <!-- header + navbar -->
+
+    <header class="position-relative">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top w-100 z-3 py-3 bg-dark"
+        id="mainNav"
+      >
+        <div class="container-fluid container-xl">
+          <a
+            class="navbar-brand text-white fw-bold d-flex align-items-center"
+            href="home.html"
+          >
+            <img
+              src="../images/logo.jpg"
+              alt="Logo Nhà Hàng"
+              class="navbar-logo me-2"
+            />
+            <span class="fs-4">Nhà hàng</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white active"
+                  aria-current="page"
+                  href="home.html"
+                  >TRANG CHỦ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html"
+                  >VỀ CHÚNG TÔI</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="service.html">DỊCH VỤ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="menu.html">THỰC ĐƠN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html">BOOKING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">LIÊN HỆ</a>
+              </li>
+            </ul>
+
+            <div class="d-none d-lg-flex ms-3 align-items-center">
+              <form class="d-flex" role="search">
+                <div class="input-group">
+                  <input
+                    class="form-control form-control-sm border-end-0"
+                    type="search"
+                    placeholder="Tìm kiếm"
+                    aria-label="Search"
+                    style="width: 120px"
+                  />
+                  <button
+                    class="btn btn-outline-light btn-sm border-start-0"
+                    type="submit"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <a
+              href="booking.html"
+              class="btn btn-primary px-4 d-none d-lg-flex ms-3"
+              >ĐẶT BÀN</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="hero-section text-white d-flex align-items-center"
+        style="background-image: url('../images/bg-hero.jpg')"
+      >
+        <div class="container-fluid container-xl">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1
+                class="display-3 fw-bold mb-4 text-white custom-text-shadow hero-content-animation h1"
+                style="line-height: 1.2"
+              >
+                Nơi Khám Phá Hương Vị Tuyệt Hảo
+              </h1>
+              <p
+                class="mb-4 text-white custom-text-shadow hero-content-animation p"
+              >
+                Hãy để chúng tôi dẫn lối vị giác của bạn vào một hành trình ẩm
+                thực khó quên. Với nguyên liệu tươi mới và sự tận tâm từ đầu
+                bếp, mỗi món ăn tại đây là một tác phẩm nghệ thuật.
+              </p>
+              <a
+                href="booking.html"
+                class="btn btn-primary btn-lg px-5 py-3 text-uppercase fw-bold hero-content-animation button"
+                >ĐẶT BÀN</a
+              >
+            </div>
+            <div class="col-lg-6 text-center">
+              <div id="hero-grill-wrapper">
+                <img
+                  class="img-fluid hero-img-grill"
+                  src="../images/hero.png"
+                  alt="Món nướng"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Giới thiệu tính năng -->
+
+      <section id="features-summary" class="container-fluid container-xl py-5">
+        <div class="row g-4 animated-set">
+          <div class="col-lg-3 col-md-6 animated-item" data-delay="100">
+            <div class="feature-card p-4 text-center">
+              <div
+                class="icon-wrapper d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3"
+              >
+                <i class="fa fa-3x fa-user-circle text-primary"></i>
+              </div>
+              <h5 class="mb-3">Đầu bếp bậc thầy</h5>
+              <p class="mb-0">
+                Đội ngũ bếp trưởng tài hoa, mang đến những kiệt tác ẩm thực đầy
+                đam mê.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 animated-item" data-delay="300">
+            <div class="feature-card p-4 text-center">
+              <div
+                class="icon-wrapper d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3"
+              >
+                <i class="fa fa-3x fa-cutlery text-primary"></i>
+              </div>
+              <h5 class="mb-3">Nguyên liệu tươi ngon</h5>
+              <p class="mb-0">
+                Lựa chọn nguyên liệu tươi mới, đảm bảo chất lượng và an toàn vệ
+                sinh tối đa.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 animated-item" data-delay="500">
+            <div class="feature-card p-4 text-center">
+              <div
+                class="icon-wrapper d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3"
+              >
+                <i class="fa fa-3x fa-calendar-check text-primary"></i>
+              </div>
+              <h5 class="mb-3">Đặt bàn nhanh chóng</h5>
+              <p class="mb-0">
+                Hệ thống đặt bàn online tiện lợi, giữ chỗ cho bạn chỉ trong vài
+                cú click.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 animated-item" data-delay="700">
+            <div class="feature-card p-4 text-center">
+              <div
+                class="icon-wrapper d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3"
+              >
+                <i class="fa fa-3x fa-phone-square text-primary"></i>
+              </div>
+              <h5 class="mb-3">Hỗ trợ tận tâm</h5>
+              <p class="mb-0">
+                Sẵn sàng phục vụ và giải đáp mọi thắc mắc của quý khách hàng mọi
+                lúc.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+
+      <section id="about-content" class="py-5">
+        <div class="container-fluid container-xl">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="row g-3 about-img-box custom-animation-set">
+                <div class="col-6 text-start">
+                  <img
+                    class="img-fluid w-100 img-lg animated-item"
+                    data-delay="300"
+                    src="../images/about-1.jpg"
+                  />
+                </div>
+
+                <div class="col-6 text-start">
+                  <img
+                    class="img-fluid w-100 img-sm img-2 animated-item"
+                    data-delay="600"
+                    src="../images/about-2.jpg"
+                  />
+                </div>
+
+                <div class="col-6 text-end">
+                  <img
+                    class="img-fluid w-100 img-sm animated-item"
+                    data-delay="900"
+                    src="../images/about-3.jpg"
+                  />
+                </div>
+
+                <div class="col-6 text-end">
+                  <img
+                    class="img-fluid w-100 img-lg animated-item"
+                    data-delay="1200"
+                    src="../images/about-4.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 animated-set" data-delay="900">
+              <h5
+                class="section-title text-start text-primary fw-normal text-underline"
+              >
+                Giới thiệu về chúng tôi
+              </h5>
+              <h1 class="mb-4">
+                Chào mừng đến với
+                <i class="fa fa-utensils text-primary me-2"></i>Nhà hàng
+              </h1>
+              <p class="mb-4">
+                Tọa lạc giữa lòng thành phố, nhà hàng chúng tôi là nơi hội tụ
+                tinh hoa ẩm thực từ những nguyên liệu tươi ngon nhất, qua bàn
+                tay chế biến tài hoa của đội ngũ bếp trưởng giàu kinh nghiệm.
+                Mỗi món ăn là một tác phẩm nghệ thuật, mang đến trải nghiệm vị
+                giác khó quên cho thực khách.
+              </p>
+
+              <div class="row g-4 mb-4" id="counter-set">
+                <div class="col-sm-6">
+                  <div
+                    class="d-flex align-items-center border-start border-5 border-primary ps-4"
+                  >
+                    <h1
+                      class="display-5 text-primary mb-0 me-3 count-target"
+                      data-count-to="15"
+                    >
+                      0
+                    </h1>
+                    <p class="mb-0">
+                      Năm <br />
+                      KINH NGHIỆM
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div
+                    class="d-flex align-items-center border-start border-5 border-primary ps-4"
+                  >
+                    <h1
+                      class="display-5 text-primary mb-0 me-3 count-target"
+                      data-count-to="50"
+                    >
+                      0
+                    </h1>
+                    <p class="mb-0">
+                      Phổ biến <br />
+                      ĐẦU BẾP BẬC THẦY
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a class="btn btn-primary py-3 px-5 mt-2" href="about.html"
+                >ĐỌC THÊM</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- menu -->
+
+    <section id="menu-section" class="container-fluid container-xl py-5">
+      <div class="container">
+        <div class="text-center animated-set" data-delay="100">
+          <h5 class="section-title text-center text-primary fw-normal">
+            Thực đơn món ăn
+          </h5>
+          <h1 class="mb-5">Các mặt hàng phổ biến nhất</h1>
+        </div>
+
+        <div class="row animated-set" data-delay="300">
+          <div class="col-12 text-center">
+            <ul
+              class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5"
+            >
+              <li class="nav-item">
+                <a
+                  class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active"
+                  data-bs-toggle="pill"
+                  href="#tab-1"
+                >
+                  <i class="fa fa-coffee fa-2x text-primary"></i>
+                  <div class="ps-3">
+                    <small class="text-body">Phổ biến</small>
+                    <h6 class="mt-n1 mb-0">Bữa sáng</h6>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="d-flex align-items-center text-start mx-3 pb-3"
+                  data-bs-toggle="pill"
+                  href="#tab-2"
+                >
+                  <i class="fa fa-hamburger fa-2x text-primary"></i>
+                  <div class="ps-3">
+                    <small class="text-body">Đặc biệt</small>
+                    <h6 class="mt-n1 mb-0">Bữa trưa</h6>
+                  </div>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="d-flex align-items-center text-start mx-3 me-0 pb-3"
+                  data-bs-toggle="pill"
+                  href="#tab-3"
+                >
+                  <i class="fa fa-utensils fa-2x text-primary"></i>
+                  <div class="ps-3">
+                    <small class="text-body">Đáng yêu</small>
+                    <h6 class="mt-n1 mb-0">Bữa tối</h6>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div class="row g-4">
+              <div class="col-lg-6 animated-item" data-delay="500">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-1.jpg"
+                    alt="Bún bò Huế"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Bún bò Huế Đặc Biệt</span>
+                      <span class="text-primary">65.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Nước dùng đậm đà, thịt bò thái mỏng, chả cua và rau thơm
+                      tươi</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 animated-item" data-delay="700">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-2.jpg"
+                    alt="Bánh mì ốp la"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Bánh Mì Trứng Ốp La</span>
+                      <span class="text-primary">30.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Bánh mì giòn rụm, ốp la béo ngậy, kèm pate và dưa
+                      chuột</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 animated-item" data-delay="900">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-3.jpg"
+                    alt="Phở Bò Tái"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Phở Bò Tái Gầu</span>
+                      <span class="text-primary">75.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Hương vị truyền thống, thịt bò mềm, nước phở thanh
+                      ngọt</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 animated-item" data-delay="1100">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-4.jpg"
+                    alt="Xôi mặn"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Xôi Thập Cẩm Đặc Sắc</span>
+                      <span class="text-primary">45.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Xôi nếp dẻo thơm, ruốc, lạp xưởng, trứng kho, chả
+                      lụa</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 animated-item" data-delay="1300">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-5.jpg"
+                    alt="Cháo gà"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Cháo Gà Hạt Sen</span>
+                      <span class="text-primary">55.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Cháo sánh mịn, thịt gà xé và hạt sen bùi, thích hợp cho
+                      buổi sáng</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 animated-item" data-delay="1500">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-6.jpg"
+                    alt="Mì Trứng"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Mì Trứng Hoành Thánh</span>
+                      <span class="text-primary">60.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Sợi mì dai, hoành thánh nhân tôm thịt, nước dùng thanh
+                      ngọt</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 animated-item" data-delay="1700">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-7.jpg"
+                    alt="Cà phê sữa đá"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Cà Phê Sữa Đá Truyền Thống</span>
+                      <span class="text-primary">35.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Vị đắng nhẹ của cà phê hòa quyện cùng sữa đặc ngọt
+                      ngào</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 animated-item" data-delay="1900">
+                <div class="d-flex align-items-center menu-item">
+                  <img
+                    class="flex-shrink-0 img-fluid rounded"
+                    src="../images/menu-8.jpg"
+                    alt="Nước Ép Cam"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div class="w-100 d-flex flex-column text-start ps-4">
+                    <h5
+                      class="d-flex justify-content-between border-bottom pb-2"
+                    >
+                      <span>Nước Ép Cam Tươi</span>
+                      <span class="text-primary">40.000đ</span>
+                    </h5>
+                    <small class="fst-italic"
+                      >Giàu Vitamin C, là lựa chọn hoàn hảo cho buổi sáng tràn
+                      đầy năng lượng</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab-2" class="tab-pane fade p-0"></div>
+
+          <div id="tab-3" class="tab-pane fade p-0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- form đặt bàn -->
+
+    <section id="reservation-section" class="py-5">
+      <div class="container">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="video-display-area">
+              <button
+                type="button"
+                class="btn-play"
+                data-bs-toggle="modal"
+                data-src=""
+                data-bs-target="#videoModal"
+              >
+                <span></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="booking-form-content text-center p-5 bg-dark">
+              <h5
+                class="section-title-small text-center text-primary fw-normal"
+              >
+                ĐẶT BÀN
+              </h5>
+              <h1 class="mb-4 text-white text-center">Đặt bàn trực tuyến</h1>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Tên của bạn"
+                      />
+                      <label for="name">Tên của bạn</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email của bạn"
+                      />
+                      <label for="email">Email của bạn</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="date"
+                        placeholder="Ngày & Giờ"
+                      />
+                      <label for="date">Ngày & Giờ</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select class="form-select" id="select1">
+                        <option value="1">Số lượng người 1</option>
+                        <option value="2">Số lượng người 2</option>
+                        <option value="3">Số lượng người 3</option>
+                      </select>
+                      <label for="select1">Số lượng người</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="Yêu cầu đặc biệt"
+                        id="message"
+                        style="height: 100px"
+                      ></textarea>
+                      <label for="message">Yêu cầu đặc biệt</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">
+                      ĐẶT BÀN NGAY
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    ></div>
+
+    <!-- đầu bếp -->
+
+    <section id="team-section" class="py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h5 class="section-title-small text-center text-primary fw-normal">
+            Thành viên nhóm
+          </h5>
+          <h1 class="mb-5">Đầu bếp bậc thầy của chúng tôi</h1>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item text-center rounded overflow-hidden">
+              <div class="rounded-circle overflow-hidden m-4">
+                <img
+                  class="img-fluid"
+                  src="../images/team-1.jpg"
+                  alt="Đầu bếp 1"
+                />
+              </div>
+              <h5 class="mb-0">Trần văn Tứ</h5>
+              <small>Bếp Trưởng Điều hành</small>
+              <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item text-center rounded overflow-hidden">
+              <div class="rounded-circle overflow-hidden m-4">
+                <img
+                  class="img-fluid"
+                  src="../images/team-2.jpg"
+                  alt="Đầu bếp 2"
+                />
+              </div>
+              <h5 class="mb-0">Nguyễn Ngọc Dũng</h5>
+              <small>Vệ sinh quầy</small>
+              <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item text-center rounded overflow-hidden">
+              <div class="rounded-circle overflow-hidden m-4">
+                <img
+                  class="img-fluid"
+                  src="../images/team-3.jpg"
+                  alt="Đầu bếp 3"
+                />
+              </div>
+              <h5 class="mb-0">Trần Ngọc Anh Tú</h5>
+              <small>Bếp Bánh & Món tráng miệng</small>
+              <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item text-center rounded overflow-hidden">
+              <div class="rounded-circle overflow-hidden m-4">
+                <img
+                  class="img-fluid"
+                  src="../images/team-4.jpg"
+                  alt="Đầu bếp 4"
+                />
+              </div>
+              <h5 class="mb-0">Nguyễn Đức Lập</h5>
+              <small>Phục vụ</small>
+              <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-square btn-primary mx-1" href=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feedback -->
+
+    <section
+      id="testimonial-section"
+      class="py-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="text-center">
+          <h5
+            class="section-title-small text-center text-primary fw-normal mb-1"
+          >
+            Lời chứng thực
+          </h5>
+          <h1 class="mb-5">Khách hàng của chúng tôi nói!!!</h1>
+        </div>
+
+        <div class="owl-carousel testimonial-carousel">
+          <div
+            class="testimonial-item bg-primary-custom border rounded p-4 text-white"
+          >
+            <i class="fa fa-quote-left fa-2x mb-3"></i>
+            <p class="quote">“Dịch vụ tuyệt vời, tôi rất hài lòng!”</p>
+            <div class="client d-flex align-items-center">
+              <img
+                class="img-fluid flex-shrink-0 rounded-circle"
+                src="https://i.pravatar.cc/80?img=1"
+                alt="fb1"
+                style="width: 50px; height: 50px"
+              />
+              <div class="ps-3">
+                <h5 class="mb-1 text-white">Trần Văn Tứ</h5>
+                <small class="text-white-50">Giám Đốc</small>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-item bg-primary-custom border rounded p-4 text-white"
+          >
+            <i class="fa fa-quote-left fa-2x mb-3"></i>
+            <p class="quote">“Sản phẩm chất lượng và giao hàng nhanh chóng.”</p>
+            <div class="client d-flex align-items-center">
+              <img
+                class="img-fluid flex-shrink-0 rounded-circle"
+                src="https://i.pravatar.cc/80?img=2"
+                alt="fb2"
+                style="width: 50px; height: 50px"
+              />
+              <div class="ps-3">
+                <h5 class="mb-1 text-white">Anh Tú</h5>
+                <small class="text-white-50">Gymmer PT</small>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-item bg-primary-custom border rounded p-4 text-white"
+          >
+            <i class="fa fa-quote-left fa-2x mb-3"></i>
+            <p class="quote">“Đội ngũ hỗ trợ khách hàng rất thân thiện.”</p>
+            <div class="client d-flex align-items-center">
+              <img
+                class="img-fluid flex-shrink-0 rounded-circle"
+                src="https://i.pravatar.cc/80?img=3"
+                alt="fb3"
+                style="width: 50px; height: 50px"
+              />
+              <div class="ps-3">
+                <h5 class="mb-1 text-white">Đức Lập</h5>
+                <small class="text-white-50">Thất nghiệp</small>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-item bg-primary-custom border rounded p-4 text-white"
+          >
+            <i class="fa fa-quote-left fa-2x mb-3"></i>
+            <p class="quote">“Giá cả hợp lý, tôi sẽ ủng hộ lần sau.”</p>
+            <div class="client d-flex align-items-center">
+              <img
+                class="img-fluid flex-shrink-0 rounded-circle"
+                src="https://i.pravatar.cc/80?img=4"
+                alt="fb4"
+                style="width: 50px; height: 50px"
+              />
+              <div class="ps-3">
+                <h5 class="mb-1 text-white">Ngọc Dũng</h5>
+                <small class="text-white-50">Bán vé số</small>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-item bg-primary-custom border rounded p-4 text-white"
+          >
+            <i class="fa fa-quote-left fa-2x mb-3"></i>
+            <p class="quote">“Trải nghiệm mua sắm tuyệt vời và nhanh chóng.”</p>
+            <div class="client d-flex align-items-center">
+              <img
+                class="img-fluid flex-shrink-0 rounded-circle"
+                src="https://i.pravatar.cc/80?img=5"
+                alt="fb5"
+                style="width: 50px; height: 50px"
+              />
+              <div class="ps-3">
+                <h5 class="mb-1 text-white">Minh Đức</h5>
+                <small class="text-white-50">Ở đợ</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer + chân -->
+
+    <footer>
+      <div
+        class="footer-hero-section position-relative wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <img
+          src="../images/hero.jpg"
+          alt="Footer Background"
+          class="img-fluid footer-bg-image"
+        />
+
+        <div
+          class="footer-overlay position-absolute w-100 h-100 d-flex flex-column justify-content-between p-5"
+        >
+          <div class="container py-5">
+            <div class="row g-5">
+              <div class="col-lg-3 col-md-6">
+                <h4
+                  class="section-title-small text-start text-primary fw-normal mb-4"
+                >
+                  Công ty
+                </h4>
+                <a class="btn btn-link" href="#">
+                  <i class="fa fa-angle-right me-2"></i>Giới Thiệu Về Chúng Tôi
+                </a>
+                <a class="btn btn-link" href="#">
+                  <i class="fa fa-angle-right me-2"></i>Liên Hệ Với Chúng Tôi
+                </a>
+                <a class="btn btn-link" href="#">
+                  <i class="fa fa-angle-right me-2"></i>Sự Đặt Chỗ
+                </a>
+                <a class="btn btn-link" href="#">
+                  <i class="fa fa-angle-right me-2"></i>Chính Sách Bảo Mật
+                </a>
+                <a class="btn btn-link" href="#">
+                  <i class="fa fa-angle-right me-2"></i>Điều Khoản & Điều Kiện
+                </a>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <h4
+                  class="section-title-small text-start text-primary fw-normal mb-4"
+                >
+                  Liên hệ
+                </h4>
+                <p class="mb-2">
+                  <i class="fa fa-map-marker-alt me-3"></i>Đường 123, New York,
+                  Hoa Kỳ
+                </p>
+                <p class="mb-2">
+                  <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+                </p>
+                <p class="mb-2">
+                  <i class="fa fa-envelope me-3"></i>info@example.com
+                </p>
+                <div class="d-flex pt-2">
+                  <a class="btn btn-outline-light btn-social" href="#">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="btn btn-outline-light btn-social" href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="btn btn-outline-light btn-social" href="#">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a class="btn btn-outline-light btn-social" href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <h4
+                  class="section-title-small text-start text-primary fw-normal mb-4"
+                >
+                  Mở đầu
+                </h4>
+                <h5 class="text-light fw-medium mb-2">Thứ Hai - Thứ Bảy</h5>
+                <p>09:00 - 21:00</p>
+                <h5 class="text-light fw-medium mb-2">Chủ nhật</h5>
+                <p>10 giờ sáng - 8 giờ tối</p>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <h4
+                  class="section-title-small text-start text-primary fw-normal mb-4"
+                >
+                  Bản tin
+                </h4>
+                <p>Dolor sit amet justo eliter clita ipsum elitr est.</p>
+                <div class="position-relative mx-auto" style="max-width: 400px">
+                  <input
+                    class="form-control border-primary w-100 py-3 ps-4 pe-5"
+                    type="text"
+                    placeholder="Email của bạn"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+                  >
+                    ĐĂNG KÝ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="copyright">
+              <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy;
+                  <a class="border-bottom" href="#">T4</a>. Mọi quyền được bảo
+                  lưu. Thiết kế bởi T4
+                  <a class="border-bottom" href=""></a>
+                  <br />
+                  Phân phối bởi
+                  <a class="border-bottom" href="" target="_blank">T4</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <div class="footer-menu">
+                    <a href="#">Trang chủ</a>
+                    <a href="#">Cookie</a>
+                    <a href="#">Trợ giúp</a>
+                    <a href="#">Câu hỏi thường gặp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery phải luôn đứng đầu -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- ✅ Sử dụng đúng bản jQuery Waypoints (KHÔNG phải 2.0.3) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- Counter-Up (phụ thuộc Waypoints) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- WOW.js cho animate.css -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <!-- Script custom -->
+    <script src="../js/home.js"></script>
+  </body>
+</html>
